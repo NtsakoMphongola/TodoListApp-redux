@@ -35,21 +35,21 @@ const TodoList = () => {
     );
   };
   //Edit item
-  const onEdit = (id) => {
-    dispatch(
-      editTask({
-        id: id,
-      })
-    );
-  };
+  // const onEdit = (id) => {
+  //   dispatch(
+  //     editTask({
+  //       id: id,
+  //     })
+  //   );
+  // };
   //Update item
-  const onDone = (id) => {
-    dispatch(
-      doneTask({
-        id: id,
-      })
-    );
-  };
+  // const onDone = (id) => {
+  //   dispatch(
+  //     doneTask({
+  //       id: id,
+  //     })
+  //   );
+  // };
 
   //render Item function with each buttons
   const renderItem = ({ item }) => {
@@ -62,18 +62,18 @@ const TodoList = () => {
         >
           <Ionicons name="trash" size={30} color="red" />
         </TouchableOpacity>
-         {/* Edit section */}
-        <TouchableOpacity
+        {/* Edit section */}
+        {/* <TouchableOpacity
           onPress={() => onEdit(item.id)}
         >
           <AntDesign name="edit" size={24} color="black" />
-        </TouchableOpacity>
-         {/* Done section */}
-        <TouchableOpacity
+        </TouchableOpacity> */}
+        {/* Done section */}
+        {/* <TouchableOpacity
           onPress={() => onDone(item.id)}
         >
-        <Ionicons name="checkmark-done-circle-sharp" size={24} color="black" />
-        </TouchableOpacity>
+          <Ionicons name="checkmark-done-circle-sharp" size={24} color="black" />
+        </TouchableOpacity> */}
       </View>
     );
   };
@@ -104,5 +104,5 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
   },
- 
+
 });

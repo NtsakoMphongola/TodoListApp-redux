@@ -19,7 +19,7 @@ export default function App() {
   };
 
   return (
-    <View  style={{ padding: 15}}>
+    <View  style={{ padding: 15, backgroundColor: '#dec941'}}>
        <Provider store={store}>
       <RootApp />
     </Provider>
