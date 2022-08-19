@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View, FlatList, TouchableOpacity } from "react-native";
 import React from "react";
+
 //Ionicons
 import { Ionicons } from "@expo/vector-icons";
 //import useSelector from "react-redux";
@@ -14,17 +15,7 @@ import { AntDesign } from '@expo/vector-icons';
 const TodoList = () => {
   const dispatch = useDispatch();
   const todos = useSelector((state) => state.tasks);
-  // console.log(todos);
-  const data = [
-    {
-      id: 1,
-      title: "Learn React Native",
-    },
-    {
-      id: 2,
-      title: "Learn Redux Toolkit",
-    },
-  ];
+
 
   //delete item by checking if id is equal to the id of the item
   const onDelete = (id) => {
@@ -34,22 +25,23 @@ const TodoList = () => {
       })
     );
   };
+
   //Edit item
-  // const onEdit = (id) => {
-  //   dispatch(
-  //     editTask({
-  //       id: id,
-  //     })
-  //   );
-  // };
+   const onEdit = (id) => {
+     dispatch(
+       editTask({
+         id: id,
+       })
+     );
+   };
   //Update item
-  // const onDone = (id) => {
-  //   dispatch(
-  //     doneTask({
-  //       id: id,
-  //     })
-  //   );
-  // };
+   const onDone = (id) => {
+     dispatch(
+       doneTask({
+         id: id,
+       })
+     );
+   };
 
   //render Item function with each buttons
   const renderItem = ({ item }) => {
@@ -63,17 +55,17 @@ const TodoList = () => {
           <Ionicons name="trash" size={30} color="red" />
         </TouchableOpacity>
         {/* Edit section */}
-        {/* <TouchableOpacity
+         <TouchableOpacity
           onPress={() => onEdit(item.id)}
         >
           <AntDesign name="edit" size={24} color="black" />
-        </TouchableOpacity> */}
+        </TouchableOpacity> 
         {/* Done section */}
-        {/* <TouchableOpacity
+         <TouchableOpacity
           onPress={() => onDone(item.id)}
         >
           <Ionicons name="checkmark-done-circle-sharp" size={24} color="black" />
-        </TouchableOpacity> */}
+        </TouchableOpacity> 
       </View>
     );
   };

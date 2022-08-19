@@ -2,11 +2,13 @@ import { StyleSheet, Text, View, TextInput, TouchableOpacity, Alert } from "reac
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addTask } from "../redux/taskSlice";
+//import firebase
+//import { firebase } from '@react-native-firebase/firestore';
 
 const TodoHeader = () => {
   const [todo, setTodo] = useState("");
   const dispatch = useDispatch();
-
+ // const ref=firebase().collection('todos')
   const onSubmitTask = () => {
     if (todo.trim().length === 0) {
       Alert.alert("You need to enter a task");
